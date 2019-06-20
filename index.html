@@ -1,15 +1,76 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="mod">
 <head>
 
-	<title>Document</title>
+	<title>Angular_Project</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js">
 	</script>
+
+	<script src="module.js" ></script>
+
+
+	<style media="screen">
+	table{
+		background-color: lightblue;
+		border-collapse: collapse;
+
+	}
+
+	tr, td,th{
+		padding: 10px;
+		border: 2px solid black;
+	}
+</style>
 </head>
 <body>
-	Enter you name: <input type="text" name="value" ng-model="name">
-	<p>Hello!!  {{ name }}</p>
 
+
+<div ng-controller="ctr">
+	<h1>{{a}}</h1>
+	<!-- <h1>Name: {{obj.name }}</h1> -->
+	<h1 ng-bind="obj.name"></h1>
+	Age: {{obj.age }}
+	<br />
+
+	<img ng-src="{{ url }}" alt="pic" width="250" height="200">
+
+</div>
+
+<div ng-controller="ctr">
+	Show Image: <input type="checkbox" name="value" ng-model="show">
+	<br />
+
+	<img ng-src="{{url}}" alt="pic" width="250" height="200" ng-show="show">
+
+<ul ng-repeat="x in names">
+	<li>{{ x }}</li>
+</ul>
+</div>
+
+
+<div ng-controller="ctr">
+	<table>
+		<tr>
+			<th>Sibling id</th>
+			<th>Sibling name</th>
+			<th>Sibling age</th>
+		</tr>
+		<tr ng-repeat="s in sibling">
+		<td>{{s.id}}</td>
+		<td>{{s.name}}</td>
+		<td>{{s.age}}</td>
+	</tr>
+
+	</table>
+
+	<div ng-controller='ctr'>
+		<h1 ng-bind="n"></h1></div>
+
+		<div ng-controller="ctr">
+			<input type="text" ng-model="n">
+			{{n}}
+		</div>
+		
 </body>
 </html>	
